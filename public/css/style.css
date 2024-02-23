@@ -25,3 +25,33 @@
     padding-right: 125px;
   }
 }
+
+.dark-box {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+  border-radius: 25px;
+  overflow: hidden;
+
+  height: 100%;
+}
+
+.dark-box img {
+  width: 100%;
+}
+
+.iframe-json iframe {
+  width: 100%;
+}
+
+#divImg {
+  padding: 10px;
+}
+
+#divImg img {
+  border-radius: 15px;
+}
+
+#divJson pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}

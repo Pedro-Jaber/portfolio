@@ -32,6 +32,10 @@ app.get("/status", (req, res) => {
   res.status(200).send("Server is Up");
 });
 
+app.get("/cataas", (req, res) => {
+  res.status(200).render("cataas");
+});
+
 //TODO error 404
 
 app.listen(PORT, () => {
