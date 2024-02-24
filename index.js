@@ -25,7 +25,7 @@ app.set("layout", "layouts/main");
 app.use("/projects", projectsBegginer);
 
 app.get(["/", "/home"], (req, res) => {
-  res.status(200).render("home");
+  res.status(200).render("home", { layout: "../views/layouts/home" });
 });
 
 app.get("/status", (req, res) => {
