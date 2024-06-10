@@ -1,0 +1,68 @@
+<div class="row gap-3">
+  <div class="col-12">
+    <div class="dark-box p-3 d-flex" id="divTest">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg mx-auto"
+        id="btnImgUpdate"
+        onclick="imgUpdate()"
+      >
+        Update
+      </button>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="dark-box text-center p3" id="divImg"></div>
+  </div>
+
+  <div class="col">
+    <div class="dark-box p-3" id="divJson"></div>
+  </div>
+</div>
+
+<!-- Functions -->
+<script>
+  let divJson = document.getElementById("divJson");
+  let divImg = document.getElementById("divImg");
+  let divTest = document.getElementById("divTest");
+
+  function imgUpdate() {
+    let imgId = undefined;
+    let jsonHtml = "";
+
+    baseUrl = "https://capaas.onrender.com/";
+    // baseUrl = "http://localhost:5505/";
+
+    fetch(`${baseUrl}capybara?json=true`)
+      .then((content) => {
+        return content.json();
+      })
+      .then((data) => {
+        // divJson.innerHTML = `<pre style="">${JSON.stringify(data, null, 2)}</pre>`;
+        jsonHtml = `<pre style="">${JSON.stringify(data, null, 2)}</pre>`;
+
+        imgId = data._id;
+      })
+      .then(() => {
+        fetch(`${baseUrl}capybara/${imgId}`) //TODO add html=true
+          .then((response) => {
+            return response.blob();
+          })
+          .then((blob) => {
+            const imageUrl = URL.createObjectURL(blob);
+            const imageElement = document.createElement("img");
+            imageElement.src = imageUrl;
+
+            // divImg.appendChild(imageElement);
+            divImg.innerHTML = `<img src="${imageElement.src}" alt="">`;
+            divJson.innerHTML = jsonHtml;
+          });
+      });
+  }
+</script>
+
+<!-- On load -->
+<script>
+  imgUpdate();
+</script>
