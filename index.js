@@ -36,6 +36,10 @@ app.get("/cataas", (req, res) => {
   res.status(200).render("cataas");
 });
 
+app.get("/capaas", (req, res) => {
+  res.status(200).render("capaas");
+});
+
 //TODO error 404
 
 app.listen(PORT, () => {
