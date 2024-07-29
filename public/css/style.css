@@ -245,8 +245,21 @@ body {
 
 .destaques-col {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.destaques-col:nth-child(odd) .project-img-destaques{
+  margin-right: 1rem;
+}
+
+.destaques-col:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.destaques-col:nth-child(even) .project-img-destaques{
+  margin-left: 1rem;
 }
 
 .project-img-destaques {
