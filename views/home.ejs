@@ -1,42 +1,116 @@
 <div class="d-flex flex-column home-img-background">
-  <div
-    class="div-home-main-title m-auto position-relative d-flex justify-content-center"
-  >
-    <h1 class="home-main-title-name px-3 position-absolute">PEDRO JABER</h1>
-    <h1 class="home-main-title-dev px-3 position-relative">BACKEND DEV</h1>
+  <div class="home-main-middle m-auto">
+    <div
+      class="div-home-main-title m-auto position-relative d-flex justify-content-center"
+    >
+      <h1 class="home-main-title-name px-3 position-absolute">PEDRO JABER</h1>
+      <h1 class="home-main-title-dev px-3 position-relative">BACKEND DEV</h1>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-center mb-3">
-    <a href="/#destaques">
-      <div class="chevron-down-icon circle-grow">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="35"
-          height="35"
-          fill="currentColor"
-          class="bi bi-chevron-down"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-          />
-        </svg>
+  <div class="home-main-bottom mb-3">
+    <div class="row g-0">
+      <div class="col-4">
+        <p class="pit-home ms-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quos
+          facere dolorum aliquam maiores deleniti quia nostrum obcaecati. Qui,
+          laboriosam doloribus quod cum corporis dolore totam. Distinctio
+          provident adipisci, assumenda veniam similique optio dicta.
+        </p>
+        <!-- 
+        <p class="pit-home ms-5">
+          Oi, meu nome é Pedro Henrique. Sou Desenvolvedor Backend apaixonado
+          por tecnologia, design e astronomia. Sou bastante curioso, adoro
+          aprender algo novo e ajudar os outros como eu puder. Meu objetivo é
+          utilizar a tecnologia para construir um mundo melhor.
+        </p>
+        -->
+        <!-- 🔭😃 -->
       </div>
-    </a>
+
+      <div class="col-4 d-flex justify-content-center align-items-end">
+        <a href="/#destaques" id="botao-ver-mais">
+          <div class="chevron-down-icon circle-grow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              fill="currentColor"
+              class="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-4"></div>
+    </div>
+    <!--
+      <div class="d-flex justify-content-center mb-3">
+        <a href="/#destaques" id="botao-ver-mais">
+          <div class="chevron-down-icon circle-grow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              fill="currentColor"
+              class="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+    -->
   </div>
 </div>
 
 <main class="main-box content py-5">
   <!-- DESTAQUES -->
   <h1 class="text-center" id="destaques">DESTAQUES</h1>
+
   <div class="row">
+    <!-- CAPAAS -->
     <div class="col-12 destaques-col mt-5">
-      <div class="project-img-destaques me-3">
+      <div class="project-img-destaques">
+        <img src="images/capaas-home.png" alt="capblog" />
+      </div>
+
+      <div class="project-text-destaques">
+        <h2>CAPAAS</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolor a
+          ea dignissimos porro, reprehenderit labore voluptatibus dicta nostrum
+          maiores, ut eos facere illum est libero dolorum ipsum quae nesciunt
+          sint id laboriosam qui nobis asperiores placeat. Optio, nisi quia.
+        </p>
+
+        <p>
+          <strong>Tags:</strong> JavaScript, Node.js, Express, JSON Web Token,
+          Bcrypt, PostgreSQL, Sequelize, Express-ejs-layouts, Bootstrap
+        </p>
+      </div>
+    </div>
+
+    <!-- CAPBLOG -->
+    <div class="col-12 destaques-col mt-5">
+      <div class="project-img-destaques">
         <img src="images/capblog-home.png" alt="capblog" />
       </div>
+
       <div class="project-text-destaques">
         <h2>CAPBLOG</h2>
+
         <p>
           Este é meu blog feito em JavaScript utilizando JSON Web Token (JWT),
           MongoDB e Mongoose. O blog realiza todas as operações de CRUD. Também
@@ -49,32 +123,16 @@
         </p>
       </div>
     </div>
-    <div class="col-12 destaques-col mt-5">
-      <div class="project-text-destaques me-3">
-        <h2>JOBMATCH</h2>
-        <p>
-          Este projeto é uma plataforma de estágios em desenvolvimento,
-          originado de um trabalho da faculdade. É uma plataforma para conectar
-          empresas e candidatos. Um Backend robusto foi desenvolvido para lidar
-          com diversas páginas e ações dos usuários. Com esse projeto aprendi
-          bastante sobre versionamento de código e requisições ao banco de dados
-        </p>
 
-        <p>
-          <strong>Tags:</strong> JavaScript, Node.js, Express, JSON Web Token,
-          Bcrypt, PostgreSQL, Sequelize, Express-ejs-layouts, Bootstrap
-        </p>
-      </div>
+    <!-- JOBMATCH -->
+    <div class="col-12 destaques-col mt-5">
       <div class="project-img-destaques">
         <img src="images/jobmatch-home.png" alt="capblog" />
       </div>
-    </div>
-    <div class="col-12 destaques-col mt-5">
-      <div class="project-img-destaques me-3">
-        <img src="images/jobmatch-home.png" alt="capblog" />
-      </div>
+
       <div class="project-text-destaques">
         <h2>JOBMATCH</h2>
+
         <p>
           Este projeto é uma plataforma de estágios em desenvolvimento,
           originado de um trabalho da faculdade. É uma plataforma para conectar
