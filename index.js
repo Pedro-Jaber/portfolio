@@ -32,10 +32,6 @@ app.get("/status", (req, res) => {
   res.status(200).send("Server is Up");
 });
 
-app.get("/cataas", (req, res) => {
-  res.status(200).render("cataas");
-});
-
 app.get("/capaas", (req, res) => {
   res.status(200).render("capaas");
 });
