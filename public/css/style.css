@@ -21,26 +21,31 @@
   --acent-light: #a256dc;
 }
 
-
 /* Breakpoints */
 
 /* Extra small */
-@media (max-width: 575px) {}
+@media (max-width: 575px) {
+}
 
 /* Small */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
 
 /* Medium */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 /* Large */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 /* Extra Large */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
 
 /* Extra Extra Large */
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+}
 
 /* ####### */
 
@@ -50,18 +55,84 @@ body {
 
   height: 100vh;
 
+  background-color: var(--acent-dark);
+  background: linear-gradient(
+    135deg,
+    #5124c0 0%,
+    #6f23a9 12.5%,
+    #b62070 25%,
+    #6f23a9 37.5%,
+    #5124c0 50%,
+    #6f23a9 62.5%,
+    #b62070 75%,
+    #6f23a9 87.5%,
+    #5124c0 100%
+  );
+
+  /* backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px); */
+
+  background-size: 200% 200%;
+  animation: gradient-animation 20s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+#inner-body {
+  --margin_size: 10px;
+  --full_vh: calc(100vh - calc(var(--margin_size) * 2));
+  --full_vw: calc(100vw - calc(var(--margin_size) * 2));
+
+  position: absolute;
+  height: var(--full_vh);
+  width: var(--full_vw);
+  top: var(--margin_size);
+  left: var(--margin_size);
+
   background-color: var(--background-dark);
+
+  /* Shadow */
+
+  /* box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.35); */
+  /* border: 3px solid rgba(255, 255, 255, 0.15); */
+
+  /* Glass */
+  /* 
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 4px 2px rgba(255, 255, 255, 0.2);
+  */
+
+  border-radius: 8px;
+
+  overflow: scroll;
 }
 
 .home-img-background {
-  height: 100vh;
+  height: var(--full_vh);
 
   background-color: var(--background-dark);
-  
-  background-image: 
-    linear-gradient(180deg, var(--background-dark-80-opct) 75%, var(--background-dark)), 
+
+  background-image: linear-gradient(
+      180deg,
+      var(--background-dark-80-opct) 75%,
+      var(--background-dark)
+    ),
     url("../images/pexels-sora-shimazaki-5926382.jpg"); /* TODO Alterar para outra foto SEM UM MAC */
-  
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -76,7 +147,7 @@ body {
 }
 
 .home-main-title-name,
-.home-main-title-dev { 
+.home-main-title-dev {
   --title-font-size: 10vw;
   font-size: var(--title-font-size);
   font-family: "Poppins", sans-serif;
@@ -128,19 +199,17 @@ body {
 .chevron-down-icon {
   --icon-size: 75px;
   padding: 0.75rem;
-  
+
   display: flex;
   border-radius: 100px;
   width: var(--icon-size);
   height: var(--icon-size);
-
 
   mix-blend-mode: screen;
   color: black;
   background-color: var(--primary-dark);
 
   animation: grow 4s infinite ease-in-out;
-  
 }
 
 /* Medium || Large || Extra Large || Extra Extra Large */
@@ -250,7 +319,7 @@ body {
   justify-content: center;
 }
 
-.destaques-col:nth-child(odd) .project-img-destaques{
+.destaques-col:nth-child(odd) .project-img-destaques {
   margin-right: 1rem;
 }
 
@@ -258,7 +327,7 @@ body {
   flex-direction: row-reverse;
 }
 
-.destaques-col:nth-child(even) .project-img-destaques{
+.destaques-col:nth-child(even) .project-img-destaques {
   margin-left: 1rem;
 }
 

@@ -4,6 +4,9 @@ const expressLayouts = require("express-ejs-layouts");
 
 const projectsBegginer = require("./routers/projectsBegginer");
 
+//* Error Router
+const errorRouter = require("./routers/errorRouter");
+
 //* Dotenv
 dotenv.config();
 
@@ -22,10 +25,12 @@ app.set("view engine", "ejs");
 app.set("layout", "layouts/main");
 
 //* Routes
+app.use("/error", errorRouter);
 app.use("/projects", projectsBegginer);
 
 app.get(["/", "/home"], (req, res) => {
-  res.status(200).render("home", { layout: "../views/layouts/home" });
+  // res.status(200).render("home", { layout: "../views/layouts/home" });
+  res.status(200).render("home", { page: "home" });
 });
 
 app.get("/status", (req, res) => {
@@ -36,7 +41,9 @@ app.get("/capaas", (req, res) => {
   res.status(200).render("capaas");
 });
 
-//TODO error 404
+app.get("*", (req, res) => {
+  res.redirect("/error/404");
+});
 
 app.listen(PORT, () => {
   console.log("Server:\x1b[92m Online \x1b[0m");
