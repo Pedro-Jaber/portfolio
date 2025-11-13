@@ -30,7 +30,15 @@ app.use("/projects", projectsBegginer);
 
 app.get(["/", "/home"], (req, res) => {
   // res.status(200).render("home", { layout: "../views/layouts/home" });
-  res.status(200).render("home", { page: "home" });
+  res
+    .status(200)
+    .render("home", { title: "Portfólio Pedro Jaber", page: "home" });
+});
+
+app.get("/attributes", (req, res) => {
+  res
+    .status(200)
+    .render("attributes", { title: "Attributes", page: "attributes" });
 });
 
 app.get("/status", (req, res) => {
